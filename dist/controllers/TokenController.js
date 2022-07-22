@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-import User from '../models/User';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _jsonwebtoken = require('jsonwebtoken'); var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
+var _dotenv = require('dotenv'); var _dotenv2 = _interopRequireDefault(_dotenv);
+var _User = require('../models/User'); var _User2 = _interopRequireDefault(_User);
 
-dotenv.config();
+_dotenv2.default.config();
 
 class TokenController {
   /**
@@ -22,7 +22,7 @@ class TokenController {
         });
       }
 
-      const user = await User.findOne({ where: { email } });
+      const user = await _User2.default.findOne({ where: { email } });
 
       if (!user) {
         return res.status(401).json({
@@ -36,7 +36,7 @@ class TokenController {
         });
       }
       const { id } = user;
-      const token = jwt.sign(
+      const token = _jsonwebtoken2.default.sign(
         { id, email },
         process.env.TOKEN_SECRET,
         { expiresIn: process.env.TOKEN_EXPIRATION },
@@ -56,4 +56,4 @@ class TokenController {
   }
 }
 
-export default new TokenController();
+exports. default = new TokenController();
