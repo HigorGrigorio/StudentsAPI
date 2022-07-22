@@ -25,7 +25,7 @@ export default async (req, res, next) => {
 
     if (!user) {
       return res.status(401).json({
-        errros: ['user not found'],
+        errors: ['user not found'],
       });
     }
 
@@ -37,7 +37,7 @@ export default async (req, res, next) => {
     return next();
   } catch (err) {
     return res.status(401).json({
-      errros: ['invalid token'],
+      errors: ['invalid token'],
     });
   }
 };
