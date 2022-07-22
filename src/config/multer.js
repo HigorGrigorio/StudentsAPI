@@ -26,7 +26,7 @@ export default {
     * @param {import('multer').FileFilterCallback} cb
     */
     destination: (req, file, cb) => {
-      cb(null, resolve(__dirname, '..', '..', 'src', 'uploads', 'images'));
+      cb(null, resolve(__dirname, '..', '..', 'dist', 'uploads', 'images'));
     },
     /**
     *
