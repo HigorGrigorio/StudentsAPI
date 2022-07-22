@@ -24,7 +24,7 @@ class App extends _express2.default {
     this.use(_express2.default.json());
 
     // configure a static path
-    this.use('/images', _express2.default.static(_path.resolve.call(void 0, __dirname, '..', 'uploads', 'images')));
+    this.use('/images/', _express2.default.static(_path.resolve.call(void 0, __dirname, '..', 'uploads', 'images')));
 
     /**
      * load routes
