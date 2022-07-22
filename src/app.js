@@ -24,8 +24,7 @@ class App extends Express {
     this.use(Express.json());
 
     // configure a static path
-    this.use('/images', Express.static(resolve(__dirname, 'uploads', 'images')));
-
+    this.use('/images', Express.static(resolve(__dirname, '..', 'dist', 'uploads', 'images')));
     /**
      * load routes
      */
